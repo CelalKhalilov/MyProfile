@@ -1,0 +1,36 @@
+﻿
+@using MyWebSite.Models.Siniflar
+@model List<İkonlar>
+
+@{
+    ViewBag.Title = "İkonListesi";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2 class="mb-4">İkonlar Sayfası</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>İkon</th>
+        <th>Renk</th>
+        <th>Güncelle</th>
+        <th>Sil</th>
+    </tr>
+
+    @foreach (var x in Model)
+     {
+        <tr>
+            <td>@x.İd</td>
+            <td><i style="color:@x.Renk;" class="@x.İkon"></i></td>
+            <td>@x.Renk</td>
+            <td><a href="/Admin/İkonGetir/@x.İd" class="btn btn-primary">Güncelle</a></td>
+            <td><a href="/Admin/İkonSil/@x.İd" class="btn btn-danger">Sil</a></td>
+            
+        </tr>
+     }
+
+</table>
+<a href="/Admin/YeniIkon/" class="btn btn-primary">Yeni İkon Ekle</a>
+
+

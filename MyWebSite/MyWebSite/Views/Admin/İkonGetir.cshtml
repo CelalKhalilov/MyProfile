@@ -1,0 +1,28 @@
+﻿
+@model MyWebSite.Models.Siniflar.İkonlar
+@{
+    ViewBag.Title = "İkonGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>İkon Güncelle</h2>
+<br />
+
+@using (Html.BeginForm("İkonGuncelle", "Admin", FormMethod.Post))
+{
+    @Html.LabelFor(x => x.İd)
+    @Html.TextBoxFor(x => x.İd, new { @class = "form-control", @readonly = "readonly" })
+    <br />
+    @Html.LabelFor(x => x.İkon)
+    @Html.TextBoxFor(x => x.İkon, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Renk)
+    @Html.TextBoxFor(x => x.Renk, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Link)
+    @Html.TextBoxFor(x => x.Link, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-success">İkon Guncelle</button>
+
+}
+
